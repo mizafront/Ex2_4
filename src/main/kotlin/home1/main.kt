@@ -1,7 +1,7 @@
 import home1.*
 
 fun main() {
-    val wallservice = WallService
+    val wallservice = WallService ()
     val firstComments = Comments ()
     val firstReposts = Reposts ()
     val firstVideo = AttachmentVideo (player = null)
@@ -19,5 +19,8 @@ fun main() {
     println(wallservice.update(firstPost))
     println(firstPost)
 
+    var comment = Comment (postID = 1, attachment = firstAttach)
+    wallservice.createComment(comment)
+    println(comment)
 
 }

@@ -1,7 +1,8 @@
 package home1
 
-object WallService {
+class WallService {
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
 
     fun add(post: Post): Post {
         posts += post
@@ -19,6 +20,19 @@ object WallService {
             }
             break
         }
+        return false
+    }
+
+    fun createComment(comment: Comment): Boolean {
+        for (targetPost in posts) {
+            if (targetPost.id == comment.postID) {
+                comments += comment
+                println("Комментарий добавлен")
+                return true
+            }
+            break
+        }
+        throw PostNotFoundException("Ошибка при добавлении комментария")
         return false
     }
 }
