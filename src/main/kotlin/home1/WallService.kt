@@ -23,13 +23,16 @@ class WallService {
         return false
     }
 
-    fun createComment(comment: Comment) {
+    fun createComment(comment: Comment): Boolean {
         for (targetPost in posts) {
             if (targetPost.id == comment.postID) {
                 comments += comment
                 println("Комментарий добавлен")
-            }else throw PostNotFoundException("Ошибка при добавлении комментария")
+                return true
+            }
         }
+        throw PostNotFoundException("Не удалось добавить комментарий")
+        return false
     }
 }
 
