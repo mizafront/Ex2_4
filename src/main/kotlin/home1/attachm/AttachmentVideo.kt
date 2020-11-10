@@ -1,4 +1,6 @@
-package home1
+package home1.attachm
+
+import java.time.LocalDateTime
 
 class AttachmentVideo(
     override val id: Int = 1,
@@ -7,7 +9,7 @@ class AttachmentVideo(
     val description: String = "HD VIDEO",
     val duration: Int = 600,
     val player: String?,
-    val date: Int = 0
+    val date: LocalDateTime = LocalDateTime.now(),
 ) : Attachment {
 
 }

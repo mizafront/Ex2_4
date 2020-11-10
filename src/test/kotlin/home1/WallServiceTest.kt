@@ -1,5 +1,7 @@
 package home1
 
+import home1.attachm.AttachmentDoc
+import home1.attachm.AttachmentVideo
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -55,14 +57,14 @@ internal class WallServiceTest {
     @Test(expected = PostNotFoundException::class)
     fun shouldThrowTrue() {
         val wallservice = WallService ()
-        var comment = Comment (postID = 1, attachment = firstAttach)
+        val comment = Comment (postID = 1, attachment = firstAttach)
         wallservice.createComment(comment)
     }
 
     @Test(expected = PostNotFoundException::class)
     fun shouldThrowFalse() {
         val wallservice = WallService ()
-        var comment = Comment (postID = 3, attachment = firstAttach)
+        val comment = Comment (postID = 3, attachment = firstAttach)
         wallservice.createComment(comment)
     }
 }

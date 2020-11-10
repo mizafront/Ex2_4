@@ -1,4 +1,6 @@
-package home1
+package home1.attachm
+
+import java.time.LocalDateTime
 
 class AttachmentDoc(
     override val id: Int = 1,
@@ -7,7 +9,7 @@ class AttachmentDoc(
     val size: String = "",
     val url: String = "www.vk.com",
     val ext: String = "",
-    val date: String = "06.11.2020"
+    val date: LocalDateTime = LocalDateTime.now(),
 ) : Attachment {
 
 }

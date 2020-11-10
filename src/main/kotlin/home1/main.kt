@@ -1,5 +1,8 @@
 package home1
 
+import home1.attachm.AttachmentDoc
+import home1.attachm.AttachmentVideo
+
 fun main() {
     val wallservice = WallService ()
     val firstComments = Comments ()
@@ -19,8 +22,10 @@ fun main() {
     println(wallservice.update(firstPost))
     println(firstPost)
 
-    val comment = Comment (postID = 1, attachment = firstAttach)
+    /* val comment = Comment (postID = 1, attachment = firstAttach)
     wallservice.createComment(comment)
-    println(comment)
+    println(comment) */
+
+
 
 }

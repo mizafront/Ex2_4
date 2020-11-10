@@ -1,5 +1,7 @@
 package home1
 
+import home1.attachm.Attachment
+
 data class Post(
         var id: Int = 0,
         val ownerId: Long = 0,
