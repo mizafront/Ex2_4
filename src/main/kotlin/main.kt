@@ -14,13 +14,13 @@ fun main() {
     FirebaseApp.initializeApp(options)
 
     val message = Message.builder()
-            .putData("action", "Like")
+            .putData("action", "NewPost")
             .putData("content", """{
           "userId": 1,
           "userName": "Vasiliy",
           "postId": 2,
           "postAuthor": "Netology",
-          "textContent" : "Hi. I like u post."
+          "textContent" : "Hi. I like u post.\n My name is Vasily. \n Я из Китая. "
         }""".trimIndent())
             .setToken(token)
             .build()
